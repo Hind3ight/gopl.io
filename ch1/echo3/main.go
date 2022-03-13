@@ -10,11 +10,17 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"time"
 )
 
 //!+
 func main() {
-	fmt.Println(strings.Join(os.Args[1:], " "))
+	start := time.Now().Unix()
+	for i := 0; i <= 100000; i++ {
+		fmt.Println(strings.Join(os.Args[0:], " "))
+	}
+	end := time.Now().Unix()
+	fmt.Printf("消耗的时间为%v", end-start)
 }
 
 //!-
