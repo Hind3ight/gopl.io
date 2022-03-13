@@ -18,12 +18,12 @@ func main() {
 	counts := make(map[string]int)
 	input := bufio.NewScanner(os.Stdin)
 	for input.Scan() {
-		counts[input.Text()]++
-	}
-	// NOTE: ignoring potential errors from input.Err()
-	for line, n := range counts {
-		if n > 1 {
-			fmt.Printf("%d\t%s\n", n, line)
+		counts[input.Text()]++ // 找到key对应的v，进行计数
+		// NOTE: ignoring potential errors from input.Err()
+		for line, n := range counts {
+			if n > 0 {
+				fmt.Printf("key值为%s的map存储了第%d次值\n", line, n)
+			}
 		}
 	}
 }
