@@ -31,8 +31,8 @@ func main() {
 		}
 	}
 	for line, n := range counts {
-		if n > 1 {
-			fmt.Printf("%d\t%s\n", n, line)
+		if n > 0 {
+			fmt.Printf("第%d命令行参数对应的文件内容为%v\n", n, line)
 		}
 	}
 }
