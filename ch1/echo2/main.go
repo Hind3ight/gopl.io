@@ -14,11 +14,11 @@ import (
 
 func main() {
 	s, sep := "", ""
-	for _, arg := range os.Args[1:] {
+	for k, arg := range os.Args[0:] {
 		s += sep + arg
 		sep = " "
+		fmt.Printf("第%v个元素为%v", k, s)
 	}
-	fmt.Println(s)
 }
 
 //!-
